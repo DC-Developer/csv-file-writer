@@ -1,0 +1,25 @@
+{
+  "name": "csv-file-writer",
+  "version": "1.0.0",
+  "description": "Basic Node application that parses csv files and saves them into a mysql database.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DC-Developer/csv-file-writer.git"
+  },
+  "author": "Dion Cavanaugh <dioncavanaugh@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DC-Developer/csv-file-writer/issues"
+  },
+  "homepage": "https://github.com/DC-Developer/csv-file-writer#readme",
+  "dependencies": {
+    "fast-csv": "2.4.1",
+    "fs": "0.0.1-security",
+    "mysql": "2.15.0"
+  }
+}
