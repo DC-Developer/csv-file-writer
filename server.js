@@ -4,6 +4,8 @@ var csv = require('fast-csv');
 
 //now create an event emitter for our stream we will be reading from
 var stream = fs.createReadStream('./csv/top10.csv');
+var stream2 = fs.createReadStream('./csv/top1100.csv');
+var stream3 = fs.createReadStream('./csv/top5000.csv');
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -22,7 +24,7 @@ connection.connect(function(err){
 //define function that will read csv file and insert it into db
 function writeFile() {
         csv
-        .fromStream(stream, {headers: ["position", "artist", "song", "year", "raw_total", "raw_usa", "raw_uk", "raw_eur", "raw_row"]})
+        .fromStream(stream3, {headers: ["position", "artist", "song", "year", "raw_total", "raw_usa", "raw_uk", "raw_eur", "raw_row"]})
         .on('data', function(data){
             connection.query(
                 "INSERT INTO top10 (position, artist, song, year, raw_total, raw_usa, raw_uk, raw_eur, raw_row)" +
